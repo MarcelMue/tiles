@@ -1,9 +1,7 @@
 <template>
   <div id="flashcard" class="container" @click="toggleCard()">
     <transition name="flip" mode="out-in">
-      <div v-bind:prop="flipped" class="card" v-on:click="">
-          <component :is="cardSide" />
-      </div>
+          <component :is="cardSide" class="card"/>
     </transition>
   </div>
 </template>
@@ -16,14 +14,14 @@ export default {
   name: "FlipCard",
   data() {
     return {
-      flipped: true,
+      flipped: false,
     };
   },
   computed: {
     cardSide() {
       if (this.flipped) return cardFront;
       else return cardBack;
-    },
+    }
   },
   methods: {
     toggleCard() {
@@ -36,12 +34,12 @@ export default {
 <style>
 .card {
   display: block;
-  width: 150px;
-  height: 175px;
+  width: 100px;
+  height: 100px;
   /* padding: 80px 50px; */
-  background-color: #51aae5;
-  border-radius: 7px;
-  margin: 5px;
+  /*background-color: #51aae5;*/
+  border-radius: 5px;
+  margin: 2px;
   text-align: center;
   line-height: 27px;
   cursor: pointer;
@@ -49,22 +47,16 @@ export default {
   color: #fff;
   font-weight: 600;
   font-size: 20px;
-  -webkit-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-  -moz-box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
-  box-shadow: 9px 10px 22px -8px rgba(209, 193, 209, 0.5);
   will-change: transform;
 }
 
-.flip-enter-active {
-  transition: all 0.4s ease;
+
+.flip-enter-active, .flip-leave-active {
+  transition: all 0.2s ease;
 }
 
-.flip-leave-active {
-  display: none;
-}
-
-.flip-enter,
-.flip-leave {
+.flip-enter-from,
+.flip-leave-to {
   transform: rotateY(180deg);
   opacity: 0;
 }

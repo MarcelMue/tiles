@@ -1,11 +1,10 @@
+<script setup lang="ts">
+import SupportIcon from "./icons/IconSupport.vue";
+</script>
+
 <template>
-  <div id="planflex" :style="cardInfo.style">
-    <div class="block">
-      <h2>{{ cardInfo.action_id }}</h2>
-    </div>
-    <div class="block" :id="cardInfo.action_id" @click="choose()">
-      <h3>{{ cardInfo.actor }}</h3>
-    </div>
+  <div id="planflex">
+    <SupportIcon width="100px" height="100px" :fill="cardInfo.color"/>
   </div>
 </template>
 
@@ -20,8 +19,8 @@ export default {
           action_id: 2,
           actor: "Sean Connery",
           size: "md",
-          color: "green",
-          style: "",
+          color: "blue",
+          style: "background-color: blue;",
         };
       },
     },

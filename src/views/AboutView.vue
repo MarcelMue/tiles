@@ -4,8 +4,23 @@ import TileItem from "../components/TileItem.vue";
 
 <template>
   <div class="about">
-    <h1>I want this to be the tile page</h1>
-    <TileItem />
+    <table>
+      <tr>
+        <th><TileItem /></th>
+        <th><TileItem /></th>
+        <th><TileItem /></th>
+      </tr>
+      <tr>
+        <td><TileItem /></td>
+        <td><TileItem /></td>
+        <td><TileItem /></td>
+      </tr>
+      <tr>
+        <td><TileItem /></td>
+        <td><TileItem /></td>
+        <td><TileItem /></td>
+      </tr>
+    </table>
   </div>
 </template>
 

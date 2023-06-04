@@ -1,6 +1,14 @@
-<script lang="ts">
-import toolingIcon from "./icons/IconTooling.vue";
+<script setup lang="ts">
+import ToolingIcon from "./icons/IconTooling.vue";
+</script>
 
+<template>
+  <div id="planflex">
+    <ToolingIcon width="100px" height="100px" :fill="cardInfo.color"/>
+  </div>
+</template>
+
+<script lang="ts">
 export default {
   name: "cardFront",
   props: {
@@ -12,12 +20,11 @@ export default {
           actor: "Buster Keaton",
           size: "lg",
           color: "red",
-          style: "",
+          style: "background-color: red;",
         };
       },
     },
   },
-  components: { toolingIcon },
   methods: {
     choose() {
       console.log("chosen");
@@ -25,17 +32,3 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div id="planflex" :style="cardInfo.style">
-    <div class="block">
-      <h2>{{ cardInfo.action_id }}asdasd</h2>
-      <figure>
-        <toolingIcon width="100px" height="100px"/>
-      </figure>
-    </div>
-    <div class="block" :id="cardInfo.action_id" @click="choose()">
-      <h3>{{ cardInfo.actor }}</h3>
-    </div>
-  </div>
-</template>
