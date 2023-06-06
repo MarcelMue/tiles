@@ -1,15 +1,18 @@
+<script setup lang="ts">
+import CardItem from "./CardItem.vue";
+import ToolingIcon from "./icons/IconTooling.vue";
+import EcosystemIcon from "./icons/IconEcosystem.vue";
+import CommunityIcon from "./icons/IconCommunity.vue";
+import SupportIcon from "./icons/IconSupport.vue";
+</script>
+
 <template>
-  <div id="flashcard" class="container" @click="toggleCard()">
-    <transition name="flip" mode="out-in">
-          <component :is="cardSide" class="card"/>
-    </transition>
+  <div id="flashcard" @click="toggleCard()">
+    <CardItem class="card" :color="cardColor" :comp="compChosen"/>
   </div>
 </template>
 
 <script lang="ts">
-import cardFront from "@/components/cardFront.vue";
-import cardBack from "@/components/cardBack.vue";
-
 export default {
   name: "FlipCard",
   data() {
@@ -18,9 +21,13 @@ export default {
     };
   },
   computed: {
-    cardSide() {
-      if (this.flipped) return cardFront;
-      else return cardBack;
+    cardColor() {
+      if (this.flipped) return "yellow";
+      else return "blue";
+    },
+    compChosen(){
+      if (this.flipped) return ToolingIcon;
+      else return EcosystemIcon;
     }
   },
   methods: {
@@ -49,16 +56,4 @@ export default {
   font-size: 20px;
   will-change: transform;
 }
-
-
-.flip-enter-active, .flip-leave-active {
-  transition: all 0.2s ease;
-}
-
-.flip-enter-from,
-.flip-leave-to {
-  transform: rotateY(180deg);
-  opacity: 0;
-}
 </style>
-
