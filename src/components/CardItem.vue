@@ -5,7 +5,7 @@ import ToolingIcon from "./icons/IconTooling.vue";
 <template>
   <div id="planflex">
     <transition name="flip" mode="out-in">
-      <component :is="comp" width="100px" height="100px" :fill="color"/>
+      <component :is="comp" width="100px" height="100px" :style="rotation" :fill="color"/>
     </transition>
   </div>
 </template>
@@ -13,8 +13,19 @@ import ToolingIcon from "./icons/IconTooling.vue";
 <script lang="ts">
 export default {
   name: "CardItem",
+  computed: {
+     rotation() {
+        return { transform: 'rotate('+ this.rota +')'}
+     }
+  },
   props: {
     color: String,
+    rota: {
+      type: String,
+      default(){
+        return "0 deg"
+      }
+    },
     comp: {
       type: Object,
       default(){

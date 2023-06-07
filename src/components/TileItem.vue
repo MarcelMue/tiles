@@ -7,8 +7,8 @@ import SupportIcon from "./icons/IconSupport.vue";
 </script>
 
 <template>
-  <div id="flashcard" @click="toggleCard()">
-    <CardItem class="card" :color="cardColor" :comp="compChosen"/>
+  <div id="flashcard" @click.exact="toggleCard()" @click.shift="toggleRotation()">
+    <CardItem class="card" :color="cardColor" :comp="compChosen" :rota="cardRotation"/>
   </div>
 </template>
 
@@ -18,12 +18,16 @@ export default {
   data() {
     return {
       flipped: false,
+      rotation: 0,
     };
   },
   computed: {
     cardColor() {
       if (this.flipped) return "yellow";
       else return "blue";
+    },
+    cardRotation() {
+      return String(this.rotation + "deg")
     },
     compChosen(){
       if (this.flipped) return ToolingIcon;
@@ -33,6 +37,10 @@ export default {
   methods: {
     toggleCard() {
       this.flipped = !this.flipped;
+    },
+    toggleRotation() {
+      console.log(this.rotation)
+      this.rotation = this.rotation + 90;
     },
   },
 };
