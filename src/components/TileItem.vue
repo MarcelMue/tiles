@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import CardItem from "./CardItem.vue";
-import ToolingIcon from "./icons/IconTooling.vue";
-import EcosystemIcon from "./icons/IconEcosystem.vue";
-import CommunityIcon from "./icons/IconCommunity.vue";
-import SupportIcon from "./icons/IconSupport.vue";
+import QuadratPattern from "./patterns/Quadrat.vue"
+import PantheonPattern from "./patterns/Pantheon.vue"
 </script>
 
 <template>
   <div id="flashcard" @click.exact="toggleCard()" @click.shift="toggleRotation()">
-    <CardItem class="card" :color="cardColor" :comp="compChosen" :rota="cardRotation"/>
+    <CardItem class="card" :color1="color1" :color2="color2" :comp="compChosen" :rot="cardRotation"/>
   </div>
 </template>
 
@@ -26,12 +24,18 @@ export default {
       if (this.flipped) return "yellow";
       else return "blue";
     },
+    color1() {
+      return "red";
+    },
+    color2 (){
+      return "yellow"
+    },
     cardRotation() {
       return String(this.rotation + "deg")
     },
     compChosen(){
-      if (this.flipped) return ToolingIcon;
-      else return EcosystemIcon;
+      if (this.flipped) return PantheonPattern;
+      else return QuadratPattern;
     }
   },
   methods: {

@@ -9,16 +9,25 @@ import TileItem from "../components/TileItem.vue";
         <th><TileItem /></th>
         <th><TileItem /></th>
         <th><TileItem /></th>
+        <th><TileItem /></th>
       </tr>
       <tr>
         <td><TileItem /></td>
         <td><TileItem /></td>
         <td><TileItem /></td>
+        <th><TileItem /></th>
       </tr>
       <tr>
         <td><TileItem /></td>
         <td><TileItem /></td>
         <td><TileItem /></td>
+        <th><TileItem /></th>
+      </tr>
+      <tr>
+        <td><TileItem /></td>
+        <td><TileItem /></td>
+        <td><TileItem /></td>
+        <th><TileItem /></th>
       </tr>
     </table>
   </div>
