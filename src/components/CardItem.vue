@@ -14,8 +14,8 @@ import ToolingIcon from "./icons/IconTooling.vue";
 export default {
   name: "CardItem",
   computed: {
-     rotation() {
-        return { transform: 'rotate('+ this.rot +')'}
+    rotation() {
+      return { transform: 'rotate('+ this.rot +')'}
      },
     c1() {
       return this.color1;

@@ -6,29 +6,39 @@ import PantheonPattern from "./patterns/Pantheon.vue"
 
 <template>
   <div id="flashcard" @click.exact="toggleCard()" @click.shift="toggleRotation()">
-    <CardItem class="card" :color1="color1" :color2="color2" :comp="compChosen" :rot="cardRotation"/>
+    <CardItem class="card" :color1="c1" :color2="c2" :comp="compChosen" :rot="cardRotation"/>
   </div>
 </template>
 
 <script lang="ts">
 export default {
   name: "FlipCard",
+  props: {
+    color1: {
+      type: String,
+      default(){
+        return "black"
+      }
+    },
+    color2: {
+      type: String,
+      default(){
+        return "black"
+      }
+    },
+  },
   data() {
     return {
       flipped: false,
       rotation: 0,
-    };
+    }
   },
   computed: {
-    cardColor() {
-      if (this.flipped) return "yellow";
-      else return "blue";
+    c1() {
+      return this.color1;
     },
-    color1() {
-      return "red";
-    },
-    color2 (){
-      return "yellow"
+    c2() {
+      return this.color2;
     },
     cardRotation() {
       return String(this.rotation + "deg")
