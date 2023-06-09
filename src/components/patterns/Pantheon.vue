@@ -19,7 +19,7 @@ export default {
     color2: {
       type: String,
       default(){
-        return "black"
+        return "white"
       }
     }
   },

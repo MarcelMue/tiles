@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ToolingIcon from "./icons/IconTooling.vue";
+import QuadratPattern from "./patterns/Quadrat.vue"
 </script>
 
 <template>
@@ -28,13 +28,13 @@ export default {
     color1: {
       type: String,
       default(){
-        return "black"
+        return "white"
       }
     },
     color2: {
       type: String,
       default(){
-        return "black"
+        return "white"
       }
     },
     rot: {
@@ -46,7 +46,7 @@ export default {
     comp: {
       type: Object,
       default(){
-        return ToolingIcon
+        return QuadratPattern
       }
     },
   },

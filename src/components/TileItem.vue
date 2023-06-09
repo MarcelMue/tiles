@@ -17,13 +17,13 @@ export default {
     color1: {
       type: String,
       default(){
-        return "black"
+        return "white"
       }
     },
     color2: {
       type: String,
       default(){
-        return "black"
+        return "white"
       }
     },
   },
