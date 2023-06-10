@@ -16,8 +16,8 @@ import { Slider } from '@ckpack/vue-color';
       </tr>
     </table>
     <div class="picker">
-      <input type="radio" v-model="pickerChoice" value="0">color1
-      <input type="radio" v-model="pickerChoice" value="1">color2
+      <input type="radio" v-model="pickerChoice" value="0">Color1
+      <input type="radio" v-model="pickerChoice" value="1">Color2
       <Slider v-if="pickerChoice == 0" v-model="colors"></Slider>
       <Slider v-if="pickerChoice == 1" v-model="colors2"></Slider>
     </div>
@@ -41,6 +41,6 @@ export default {
 
 <style>
 .picker {
-  margin: 20px;
+  margin-top: 20px;
 }
 </style>
