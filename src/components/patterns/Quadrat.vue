@@ -1,14 +1,6 @@
 <script lang="ts">
 export default {
   name: "Quadrat",
-  computed: {
-    c1() {
-      return "fill:" + this.color1;
-    },
-    c2() {
-      return "fill:" + this.color2;
-    }
-  },
   props: {
     color1: {
       type: String,
@@ -21,6 +13,14 @@ export default {
       default(){
         return "white"
       }
+    }
+  },
+  computed: {
+    c1() {
+      return "fill:" + this.color1;
+    },
+    c2() {
+      return "fill:" + this.color2;
     }
   },
 };

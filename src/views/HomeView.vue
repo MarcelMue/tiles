@@ -8,7 +8,7 @@ import { Slider } from '@ckpack/vue-color';
     <table>
       <tr v-for="n in 4">
         <th v-for="n in 4">
-          <TileItem :color1="typeof colors === 'object' ? colors.hex8 : colors" :color2="typeof colors2 === 'object' ? colors2.hex8 : colors2"/>
+          <TileItem :color1="typeof colors === 'object' ? colors['hex8'] : colors" :color2="typeof colors2 === 'object' ? colors2['hex8'] : colors2"/>
         </th>
       </tr>
     </table>

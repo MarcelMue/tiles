@@ -13,17 +13,6 @@ import QuadratPattern from "./patterns/Quadrat.vue"
 <script lang="ts">
 export default {
   name: "CardItem",
-  computed: {
-    rotation() {
-      return { transform: 'rotate('+ this.rot +')'}
-     },
-    c1() {
-      return this.color1;
-    },
-    c2() {
-      return this.color2;
-    }
-  },
   props: {
     color1: {
       type: String,
@@ -49,6 +38,17 @@ export default {
         return QuadratPattern
       }
     },
+  },
+  computed: {
+    rotation() {
+      return { transform: 'rotate('+ this.rot +')'}
+     },
+    c1() {
+      return this.color1;
+    },
+    c2() {
+      return this.color2;
+    }
   },
 };
 </script>
