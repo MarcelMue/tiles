@@ -5,6 +5,9 @@ import { Slider } from '@ckpack/vue-color';
 
 <template>
   <div class="about">
+    <p>
+      Click to flip, Ctrl + click to rotate.
+    </p>
     <table>
       <tr v-for="n in 4">
         <th v-for="n in 4">
@@ -12,12 +15,12 @@ import { Slider } from '@ckpack/vue-color';
         </th>
       </tr>
     </table>
-  </div>
-  <div class="picker">
-    <input type="radio" v-model="pickerChoice" value="0">color 1
-    <input type="radio" v-model="pickerChoice" value="1">color 2
-    <Slider v-if="pickerChoice == 0" v-model="colors"></Slider>
-    <Slider v-if="pickerChoice == 1" v-model="colors2"></Slider>
+    <div class="picker">
+      <input type="radio" v-model="pickerChoice" value="0">color1
+      <input type="radio" v-model="pickerChoice" value="1">color2
+      <Slider v-if="pickerChoice == 0" v-model="colors"></Slider>
+      <Slider v-if="pickerChoice == 1" v-model="colors2"></Slider>
+    </div>
   </div>
 </template>
 
