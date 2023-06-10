@@ -33,7 +33,7 @@ export default {
     return {
       pickerChoice: 0,
       colors: 'white',
-      colors2: 'white',
+      colors2: 'black',
     }
   },
 }
