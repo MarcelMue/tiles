@@ -2,10 +2,11 @@
 import CardItem from "./CardItem.vue";
 import QuadratPattern from "./patterns/Quadrat.vue"
 import PantheonPattern from "./patterns/Pantheon.vue"
+import JaneinPattern from "./patterns/Janein.vue"
 </script>
 
 <template>
-  <div id="flashcard" @click.exact="toggleCard()" @click.shift="toggleRotation()">
+  <div id="flashcard" @click.exact="toggleCard()">
     <CardItem class="card" :color1="c1" :color2="c2" :comp="compChosen" :rot="cardRotation"/>
   </div>
 </template>
@@ -26,6 +27,24 @@ export default {
         return "white"
       }
     },
+    front: {
+      type: String,
+      default(){
+        return ""
+      }
+    },
+    back: {
+      type: String,
+      default(){
+        return ""
+      }
+    },
+    flip: {
+      type: Boolean,
+      default(){
+        return true
+      }
+    },
   },
   data() {
     return {
@@ -44,17 +63,27 @@ export default {
       return String(this.rotation + "deg")
     },
     compChosen(){
-      if (this.flipped) return PantheonPattern;
-      else return QuadratPattern;
+      if (this.flipped) return this.comp(this.back);
+      else return this.comp(this.front);
     }
   },
   methods: {
     toggleCard() {
-      this.flipped = !this.flipped;
+      if (this.flip){
+        this.flipped = !this.flipped;
+      } else {
+        this.rotation = this.rotation + 90;
+      }
     },
-    toggleRotation() {
-      console.log(this.rotation)
-      this.rotation = this.rotation + 90;
+    comp(val: string){
+      switch (val) {
+        case "janein":
+          return JaneinPattern;
+        case "pantheon":
+          return PantheonPattern;
+        case "quadrat":
+          return QuadratPattern;
+      }
     },
   },
 };
