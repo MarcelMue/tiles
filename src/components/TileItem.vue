@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CardItem from "./CardItem.vue";
+import BlockplayPattern from "./patterns/Blockplay.vue"
 import QuadratPattern from "./patterns/Quadrat.vue"
 import PantheonPattern from "./patterns/Pantheon.vue"
 import JaneinPattern from "./patterns/Janein.vue"
@@ -77,6 +78,8 @@ export default {
     },
     comp(val: string){
       switch (val) {
+        case "blockplay":
+          return BlockplayPattern;
         case "janein":
           return JaneinPattern;
         case "pantheon":

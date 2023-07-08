@@ -29,12 +29,14 @@ import { Slider } from '@ckpack/vue-color';
     <div class="picker">
       <select v-model="front">
         <option disabled value="">Front Pattern</option>
+        <option>blockplay</option>
         <option>janein</option>
         <option>pantheon</option>
         <option>quadrat</option>
       </select>
       <select v-model="back">
         <option disabled value="">Back Pattern</option>
+        <option>blockplay</option>
         <option>janein</option>
         <option>pantheon</option>
         <option>quadrat</option>
